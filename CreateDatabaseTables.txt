@@ -1,0 +1,32 @@
+CREATE TABLE [dbo].[Cars] (
+    [Id]          INT           NOT NULL,
+    [BrandId]     INT           NOT NULL,
+    [ColorId]     INT           NOT NULL,
+    [ModelYear]   INT           NOT NULL,
+    [DailyPrice]  DECIMAL (18)  NOT NULL,
+    [Description] NVARCHAR (50) NULL,
+    [CarName]     NVARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Brands] (
+    [BrandId]   INT           NOT NULL,
+    [BrandName] NVARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([BrandId] ASC)
+); 
+
+CREATE TABLE [dbo].[Colors] (
+    [ColorId]   INT           NOT NULL,
+    [ColorName] NVARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([ColorId] ASC)
+); 
+CREATE TABLE [dbo].[Orders] (
+    [OrderId]      INT           NOT NULL, 
+    [CustomerId]   INT           NOT NULL, 
+    [EmployeeId]   INT           NOT NULL, 
+    [OrderDate]    DATETIME      NOT NULL, 
+    [ReturnDate]   DATETIME      NOT NULL,
+    [DailyPrice]   DECIMAL       NULL,
+    [Description]  NVARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([OrderId] ASC)
+);

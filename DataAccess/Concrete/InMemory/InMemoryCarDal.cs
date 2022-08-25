@@ -35,11 +35,6 @@ namespace DataAccess.Concrete.InMemory
             _cars.Remove(carToDelete);
         }
 
-        public List<Car> GetAll()
-        {
-            return _cars;
-        }
-
         public void Update(Car car)
         {
             Car carToUpdate = _cars.SingleOrDefault(p => p.Id == car.Id);
@@ -48,10 +43,6 @@ namespace DataAccess.Concrete.InMemory
             car.DailyPrice = car.DailyPrice;
             car.Description = car.Description;
             car.ModelYear = car.ModelYear; 
-        }
-        public List<Car> GetAllByCategoryId(int brandId)
-        {
-            throw new NotImplementedException();
         }
 
         public List<Car> GetCarsByBrandId(int brandId)
@@ -67,7 +58,7 @@ namespace DataAccess.Concrete.InMemory
 
         public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return _cars;
         }
 
         public Car Get(Expression<Func<Car, bool>> filter)
