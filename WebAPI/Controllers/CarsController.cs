@@ -26,14 +26,6 @@ namespace WebAPI.Controllers
 
         [HttpGet]
 
-        ///*
-        //public List<Car> Get()
-        //{
-
-        //    var result = _carService.GetAll();
-        //    return result.Data;
-        //}
-        //*/
         public List<Car> Get()
         {
             var result = _carService.GetAll();
